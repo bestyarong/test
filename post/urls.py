@@ -15,10 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from blog import views
+from user import views as user_views
 
 urlpatterns = [
     url(r'^post/edit/', views.edit_post),
     url(r'^post/read/', views.read_post),
     url(r'^post/list/', views.post_list),
+    url(r'^$', views.post_list),
     url(r'^post/create/', views.create_post),
+
+    url(r'^user/login/', user_views.user_login),
+    url(r'^user/register/', user_views.user_register),
+    url(r'^user/info/', user_views.user_info),
 ]
